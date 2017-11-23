@@ -30,16 +30,23 @@ router.get('/api/:search', (req, res) => {
       searchHistory.saveHistory(search);
     } catch (error) {
       console.log(error);
-      res.end(JSON.stringify({ Error: 'Could not get search information. Please try again later.' }), null, 2);
+      res.end(JSON.stringify({ Error: 'Could not get search results. Please try again later.' }, null, 2));
     }
   }
   runSearch();
 });
 
-router.get('/latest', (req, res) => {
-  searchHistory.getHistory((err, history) => {
-    if (err) throw err;
-    res.end(JSON.stringify(history, null, 2));
+router.get('/history', (req, res) => {
+  // Check if number of query specified (if not then default to 10) - max of 100
+  const numResults = Math.max(parseInt(req.query.num, 10) > 0 ? parseInt(req.query.num, 10) : 10, 100);
+  // Call function to query database for recent search terms
+  searchHistory.getHistory(numResults, (err, history) => {
+    if (err) {
+      // Return error if cannot find database content
+      res.end(JSON.stringify({ Error: 'Could not get access search history.' }, null, 2));
+      throw err;
+    }
+    res.end(JSON.stringify(history, ['term', 'when'], 2));
   });
 });
 
