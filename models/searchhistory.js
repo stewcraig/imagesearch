@@ -1,9 +1,8 @@
 
 const History = require('./historymodel');
-// const mongoose = require('mongoose');
 
 exports.saveHistory = (searchTerm) => {
-  // Create neew entry for database
+  // Create new entry for database
   const newHistory = new History({
     term: searchTerm,
     when: new Date().toString(),

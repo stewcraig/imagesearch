@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// mongoose.Promise = global.Promise;
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/imagesearch', { useMongoClient: true });
 
 mongoose.connection.on('connected', () => {
@@ -21,5 +21,3 @@ process.on('SIGNT', () => {
     process.exit(0);
   });
 });
-
-
