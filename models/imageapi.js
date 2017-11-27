@@ -1,4 +1,3 @@
-require('dotenv').config();
 const axios = require('axios');
 
 // Get search information from Google API

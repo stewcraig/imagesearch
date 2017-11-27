@@ -18,8 +18,8 @@ function filterResults(array) {
   });
 }
 
-// ------------------- /api/:search ROUTE ----------------------
-router.get('/api/:search', (req, res) => {
+// ------------------- /search/:search ROUTE ----------------------
+router.get('/search/:search', (req, res) => {
   const { search } = req.params;
   // Offset parameter controls page number of results to display.
   // Round offset to nearest integer (or set to 1 if 0 or less)

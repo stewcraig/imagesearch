@@ -1,8 +1,16 @@
 {
   "name": "imagesearch",
   "version": "1.0.0",
-  "description": "",
+  "description": "Image search abstraction microservice",
   "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stewcraig/imagesearch"
+  },
+  "engines": {
+    "node": "8.9.1",
+    "npm": "5.5.1"
+  },
   "scripts": {
     "start": "node app.js",
     "start:dev": "nodemon app.js"
