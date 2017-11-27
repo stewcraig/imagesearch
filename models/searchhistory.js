@@ -11,14 +11,14 @@ exports.saveHistory = (searchTerm) => {
   // Save new entry to database
   newHistory.save((err) => {
     if (err) throw err;
-    console.log('Saved');
   });
 };
 
 exports.getHistory = (numResults, callback) => {
   // Query database for most recent search terms
-  return History
+  const query = History
     .find({}, {}, { sort: { when: -1 } })
     .limit(numResults)
     .exec(callback);
+  return query;
 };

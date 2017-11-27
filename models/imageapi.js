@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 
-// Gets search information from Google API
+// Get search information from Google API
 exports.imageSearch = (search, page) => {
   // Google API settings
   const url = 'https://www.googleapis.com/customsearch/v1';
