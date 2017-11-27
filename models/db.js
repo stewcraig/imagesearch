@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/imagesearch', { useMongoClient: true });
+
+mongoose.connect(process.env.MONGO_URI, { useMongoClient: true });
 
 mongoose.connection.on('connected', () => {
   console.log('Mongoose default connection open');

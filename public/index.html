@@ -3,7 +3,7 @@
     <head>
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link href="css/styles.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=.7">
+        <meta name="viewport" content="width=device-width, initial-scale=.65">
         <title>Image search abstraction microservice</title>
     </head>
 
@@ -21,13 +21,13 @@
 
         <h3>Search</h3>
         <p>To do an image search, enter URL into web address bar as per format below. When entering address, replace <span><code>[SEARCH-TERM]</code></span> with the term to be searched.</p>
-        <pre><code class="code-block">http://[APP ADDRESS].herokuapp.com/api/[SEARCH-TERM]?offset=1</code></pre>
+        <pre><code class="code-block">http://image-search-microsvc.herokuapp.com/api/[SEARCH-TERM]?offset=1</code></pre>
         <p>Adjusting the value of <span><code>offset</code></span> will change which page is displayed (default is 1). Note that 10 results are displayed per page.</p>
         
         <br>
         <h3>History</h3>
         <p>To view recent search history, enter URL into web address bar as per format below.</p>
-        <pre><code class="code-block">http://[APP ADDRESS].herokuapp.com/history?num=10</code></pre>
+        <pre><code class="code-block">http://mage-search-microsvc.herokuapp.com/history?num=10</code></pre>
         <p>Adjusting value of <span><code>num</code></span> will change number of recent search terms to be displayed (default is 10). Note that maximum recent search results displayed is 100.</p>
     </body>
 </html>

@@ -54,7 +54,6 @@ router.get('/history', (req, res) => {
       // Return error if cannot find database content
       res.writeHead(500, { 'Content-Type': 'text/plain' });
       res.end(JSON.stringify({ Error: 'Could not get access search history.' }, null, 2));
-      throw err;
     }
     // Return search history to user
     res.writeHead(200, { 'Content-Type': 'text/plain' });
